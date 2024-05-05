@@ -24,6 +24,7 @@ def mean_inplace(df, column):
     mean_value = df[column].mean()
     df[column].fillna(mean_value, inplace=True)
 academic_performance.info()
+df["COURSE 1 MARKS"] = df["COURSE 1 MARKS"].apply(lambda x: 0 if x<0 else x) # for handling outliers df.describe() - min,max
 #Missing value percentage
 for column in academic_performance.columns:
     miss_per = (academic_performance[column].isnull().sum() / len(academic_performance))
