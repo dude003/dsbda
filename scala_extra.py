@@ -26,3 +26,13 @@ object NumberCheck {
     }
   }
 }
+
+nano wc1.txt
+#scala commands
+spark-shell
+val inputfile = sc.textFile("wc1.txt")
+val counts = inputfile.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey(_+_);
+counts.toDebugString
+counts.cache()
+counts.saveAsTextFile("wc_output")
+cat filename
