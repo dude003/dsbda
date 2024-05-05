@@ -18,6 +18,7 @@ plt.show()
 sns.set(style='whitegrid')
 plt.figure(figsize=(8,6))
 sns.countplot(x='Survived', hue='Survived', data=df, palette=['black', 'cyan'])
+plt.title("SUrvival Status")
 plt.xlabel('Survived')
 plt.ylabel('Count')
 #Pclass
